@@ -834,7 +834,7 @@ print(" --- start loading functions file --- ")
 						newallels=apply(xtab[,xgenind@loc.fac==msat],1,getallels)
 						
 						if(msat==levels(xgenind@loc.fac)[1])
-						{#neu
+						{
 							msatdfout=data.frame(newallels)
 						} else
 						{
@@ -1422,7 +1422,7 @@ print(" --- start loading functions file --- ")
 							coord[poslat90,2]=cordbuffer[poslat90,1]
 							print(paste0("Position error, latitude switched with longitude: ", paste0(poslat90,collapse="-")))
 							
-				# define outer boundary as +1° of min/max coordinates
+				# define outer boundary as +1Â° of min/max coordinates
 					londif=1
 					latdif=1
 					outer=data.frame(Lon=c(min(coord[,1])-londif,min(coord[,1])-londif,max(coord[,1])+londif,max(coord[,1])+londif,min(coord[,1])-londif), Lat=c(max(coord[,2])+latdif,min(coord[,2])-latdif,min(coord[,2])-latdif,max(coord[,2])+latdif,max(coord[,2])+latdif))
@@ -1730,7 +1730,6 @@ print(" --- start loading functions file --- ")
 
 				# genotype file
 					xtab=as.data.frame(xgenind@tab)
-						# nehme jeden Msat und mache 6stellige Angabe der beiden Allele wie z.B. "0" draus
 							msatdfout=NULL
 							for(msat in levels(xgenind@loc.fac))
 							{
@@ -1739,7 +1738,7 @@ print(" --- start loading functions file --- ")
 									newallels=apply(xtab[,xgenind@loc.fac==msat],1,getallelsCervus)
 									
 									if(msat==levels(xgenind@loc.fac)[1])
-									{#neu
+									{
 											msatdfout=data.frame(newallels)
 									} else
 									{
